@@ -1,0 +1,45 @@
+//Program to find largest element in an array
+//program to find minimum element in an array
+#include <stdio.h>
+using namespace std;
+
+int maximum(int arr[], int size)
+{
+	int max = arr[0];							//initializing some value to max variable
+	for (int i=1; i<size; i++)
+	{
+		if (arr[i]>max)							//checking whether the iterative value is greater than the max variable
+			max=arr[i];							//if iterative value is more the update max variable
+	}
+	return max;
+}
+void printArray(int arr[], int size)			//function for printing array
+{
+	for (int i=0; i<size; i++)
+	{
+		printf("%d\t",arr[i]);
+	}
+	printf("\n");
+}
+int minimum(int arr[], int size)
+{
+	int min=arr[0];
+	for(int i=1; i<size; i++)
+	{
+		if (arr[i]<min)
+			min=arr[i];
+	}
+	return min;
+}
+int main()
+{
+//	int arr[3]={10,20,30};
+	int arr[10]={1,3,10,45,32,-46,21,44,20,30};
+	int size = sizeof(arr)/sizeof(arr[0]);		//calculating size
+	printf("The array is\t");		
+	printArray(arr,size);						//printing array
+	
+	printf("The max is: %d\n",maximum(arr,size));	//passing array and size in the maximum function
+	printf("The min is: %d\n",minimum(arr,size));	//passing array and size in the minimum function
+	return 0;
+}
